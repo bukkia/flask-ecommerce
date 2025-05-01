@@ -8,7 +8,7 @@ def client():
     with app.app_context():
         db.create_all()
         # Seed with a sample product
-        product = Product(name="Sample Product", price=9.99, image_url="http://example.com/image.png")
+        product = Product(name="Sample Product", price=9.99, image_url="https://example.com/image.png")
         db.session.add(product)
         db.session.commit()
     with app.test_client() as client:
