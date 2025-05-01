@@ -25,7 +25,7 @@ def test_add_product(client):
     response = client.post('/add-product', data={
         'name': 'Test Product',
         'price': '19.99',
-        'image_url': 'http://example.com/test.png'
+        'image_url': 'https://example.com/test.png'
     }, follow_redirects=True)
     assert response.status_code == 200
     assert b"Test Product" in response.data
