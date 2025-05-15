@@ -21,7 +21,7 @@ pipeline {
         stage("Sonarqube Scan") {
             steps {
                 withSonarQubeEnv('sonar-server') {
-                    sh "$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=flask-ecom -Dsonar.projectName=flask-ecom -Dsonar.python.coverage.reportPaths=coverage.xml"
+                    sh "$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=flask-ecomm -Dsonar.projectName=flask-ecomm -Dsonar.python.coverage.reportPaths=coverage.xml"
                 }
             }
         }
