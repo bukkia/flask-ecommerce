@@ -4,9 +4,9 @@ pipeline {
 
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
-        IMAGE_NAME = "idrisniyi94/flask-ecom"
+        IMAGE_NAME = "abiolao/flask-ecom"
         IMAGE_TAG = "${BUILD_NUMBER}"
-        CONTAINER_NAME = "lab-server-flask-ecom"
+        CONTAINER_NAME = "abiolao-flask-ecom-flask-ecom"
     }
 
     stages {
