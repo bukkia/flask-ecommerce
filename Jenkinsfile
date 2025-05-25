@@ -2,26 +2,12 @@ pipeline {
     agent any
 
     environment {
-        SCANNER_HOME = tool 'sonar-scanner'
-        IMAGE_NAME = "aolubukade/flask-ecommerce"
+        IMAGE_NAME = "aolubukade/flask-ecommerce:v1"
         IMAGE_TAG = "${BUILD_NUMBER}"
-        CONTAINER_NAME = "abiolao-flask-ecom-flask-ecom"
+        CONTAINER_NAME = "abiolao-flask-ecom"
     }
 
     stages {
-
-        stage("Sonarqube Scan") {
-            steps {
-                withSonarQubeEnv('sonar-server') {
-                    sh '''
-                        $SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectKey=flask-ecomm \
-                        -Dsonar.projectName=flask-ecomm \
-                        -Dsonar.python.coverage.reportPaths=coverage.xml
-                    '''
-                }
-            }
-        }
 
         stage("Push Docker Image") {
             steps {
